@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/hover-min.css">
 <link rel="stylesheet" href="css/animate.css">
 <link href='https://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- bootstrap -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -32,12 +33,17 @@
 <link rel="stylesheet" href="CSS3 Menu_files/css3menu1/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
 <!-- End css3menu.com HEAD section -->
     
-<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-<link rel="stylesheet" type="text/css" href="engine1/style.css" />
-<!-- End WOWSlider.com HEAD section -->
+
     
-</head>
+
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
+	<!--script type="text/javascript" src="engine0/jquery.js"></script-->
+	<!-- End WOWSlider.com HEAD section --></head>
 <body>
+
+	
 <div class="logo" style=" position:absolute;margin-top:5px;left:10px;width:250px; height:150px"><img src="imagenes/logotipo.png" width="100%"></div>
 <header>
 <?php
@@ -72,43 +78,44 @@ if(isset($_GET['compra_cancelada'])) {
 <div class="cabecera"></div>
 <nav class="wow bounceInDown" data-wow-duration="1.5s">
 
-<!-- Start css3menu.com BODY section -->
+<!-- /////////////////////////    MENU    ////////////////////////////////-->
 <input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
 <ul id="css3menu1" class="topmenu">
-	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
-	<li class="topmenu"><a class="pressed" href="#" style="width:172px;height:71px;line-height:71px;">INICIO</a></li>
-	<li class="topmenu"><a href="#" style="width:197px;height:71px;line-height:71px;"><span>PRODUCTOS</span></a>
-	<ul>
+  <li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
+  <li ><a  href="#" class="btn btn-primary my-2">INICIO</a></li>
+  <li ><a href="#" class="btn btn-primary my-2"><span>PRODUCTOS</span></a>
+  <ul>
+   <!-- /////////////////////////    MENU-CATEGORIAS   ////////////////////////////////--> 
     <?php
-	while ($fila1=mysqli_fetch_array($registros1)){	
-		$registros10=mysqli_query($conexion,"select * from subcategorias where id_categoria='$fila1[id]' order by nombre asc");
-	?>
-		<li><a href="mostrarproductos.php?id_categoria=<?php echo $fila1['id']; ?>"><?php echo utf8_encode($fila1['categoria']);?></a>
+  while ($fila1=mysqli_fetch_array($registros1)){ 
+    $registros10=mysqli_query($conexion,"select * from subcategorias where id_categoria='$fila1[id]' order by nombre asc");
+  ?>
+    <li><a href="mostrarproductos.php?id_categoria=<?php echo $fila1['id']; ?>"><?php echo utf8_encode($fila1['categoria']);?></a>
         <ul>
-        	<?php
-			if(mysqli_num_rows($registros10)!=0){
-				while ($fila10=mysqli_fetch_array($registros10)){	
-			?>
-			
-			<li><a href="mostrarproductos.php?id_categoria=<?php echo $fila1['id']; ?>&id_subcategoria=<?php echo $fila10['id_subcategoria']; ?>"><?php echo utf8_encode($fila10['nombre']);?></a></li>
-			
+          <?php
+      if(mysqli_num_rows($registros10)!=0){
+        while ($fila10=mysqli_fetch_array($registros10)){ 
+      ?>
+      
+      <li><a href="mostrarproductos.php?id_categoria=<?php echo $fila1['id']; ?>&id_subcategoria=<?php echo $fila10['id_subcategoria']; ?>"><?php echo utf8_encode($fila10['nombre']);?></a></li>
+      
             <?php 
-				}
-			}
-			?>
+        }
+      }
+      ?>
             </ul>
         </li>
     <?php
-	}
-	?>
-	</ul>
+  }
+  ?>
+  </ul>
     </li>
-	<li class="topmenu"><a href="contacto.php" style="width:189px;height:71px;line-height:71px;">CONTACTO</a></li>
-	<li class="topmenu"><a href="#" style="height:71px;line-height:71px;"><img src="CSS3 Menu_files/css3menu1/register.png" alt=""/>REGISTRO / ACCESO</a>
-    	<ul>
-			<li><a href="#" onclick="mostrar_ventana_modal()">INICIAR SESIÓN</a></li>
-			<li><a href="clientes/form_registro_clientes.php">REGISTRARSE</a></li>
-		</ul>
+  <li ><a href="contacto.php" class="btn btn-primary my-2">CONTACTO</a></li>
+  <li ><a href="#" class="btn btn-primary my-2"><img src="CSS3 Menu_files/css3menu1/register.png" alt=""/>REGISTRO / ACCESO</a>
+      <ul>
+      <li><a href="#" onclick="mostrar_ventana_modal()">INICIAR SESIÓN</a></li>
+      <li><a href="clientes/form_registro_clientes.php">REGISTRARSE</a></li>
+    </ul>
     </li> 
 </ul>
 <!-- End css3menu.com BODY section -->
@@ -147,31 +154,39 @@ if(isset($_SESSION['nombre_cliente']) || isset($_COOKIE['nombre_cliente'])){
 }
 ?>
 </div>
+<!-- SLIDER PROMOCIONE Y ANUNCIOS -->
 <div class="slider wow bounceInUp" data-wow-duration="1.5s">
-	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-	<div id="wowslider-container1">
-	<div class="ws_images"><ul>
-		<li><img src="data1/images/lasmejoresofertas.jpg" alt="las-mejores-ofertas" title="las-mejores-ofertas" id="wows1_0"/></li>
-		<li><img src="data1/images/transporte.jpg" alt="transporte" title="transporte" id="wows1_1"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="las-mejores-ofertas"><span><img src="data1/tooltips/lasmejoresofertas.jpg" alt="las-mejores-ofertas"/>1</span></a>
-		<a href="#" title="transporte"><span><img src="data1/tooltips/transporte.jpg" alt="transporte"/>2</span></a>
-	</div></div>
-	<div class="ws_shadow"></div>
-	</div>	
-	<script type="text/javascript" src="engine1/wowslider.js"></script>
-	<script type="text/javascript" src="engine1/script.js"></script>
-	<!-- End WOWSlider.com BODY section -->
+  <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+  <div id="wowslider-container0">
+  <div class="ws_images"><ul>
+    <li><img src="data0/images/2.jpg" alt="2" title="2" id="wows0_0"/></li>
+    <li><img src="data0/images/1.jpg" alt="1" title="1" id="wows0_1"/></li>
+    <li><a href="http://wowslider.net"><img src="data0/images/ordenador.png" alt="javascript photo gallery" title="ordenador" id="wows0_2"/></a></li>
+    <li><img src="data0/images/3.jpg" alt="3" title="3" id="wows0_3"/></li>
+  </ul></div>
+  <div class="ws_bullets"><div>
+    <a href="#" title="2"><span><img src="data0/tooltips/2.jpg" alt="2"/>1</span></a>
+    <a href="#" title="1"><span><img src="data0/tooltips/1.jpg" alt="1"/>2</span></a>
+    <a href="#" title="ordenador"><span><img src="data0/tooltips/ordenador.png" alt="ordenador"/>3</span></a>
+    <a href="#" title="3"><span><img src="data0/tooltips/3.jpg" alt="3"/>4</span></a>
+  </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v9.0</div>
+  <div class="ws_shadow"></div>
+  </div>  
+  <script type="text/javascript" src="engine0/wowslider.js"></script>
+  <script type="text/javascript" src="engine0/script.js"></script>
+  <!-- End WOWSlider.com BODY section --> 
+
 </div>
 </header>
+
+
 <div class="main">
 <?php
 while($fila2=mysqli_fetch_array($registros2)){
 	$registros3=mysqli_query($conexion,"select nombre from imagenes where id_producto='$fila2[id_producto]' and prioridad=1");
 		$fila3=mysqli_fetch_array($registros3);
 ?>
-<a href="detalleproducto.php?id_categoria=<?php echo $fila2['id_categoria']; ?><?php if($fila2['id_subcategoria']!=-1) {?>&id_subcategoria=<?php echo $fila2['id_subcategoria']; ?><?php } ?>&id_producto=<?php echo $fila2['id_producto']; ?>"><div id="i" class="productosmain hvr-buzz-out"><img src="administracion/productos/imagenes/<?php if(mysqli_num_rows($registros3)>0)echo $fila3['nombre']; else echo "no-disponible.jpg"; ?>" width="100%" alt="portatil1"><div class="precio"><?php echo $fila2['precio']." Euros"; ?></div></div></a>
+<a href="detalleproducto.php?id_categoria=<?php echo $fila2['id_categoria']; ?><?php if($fila2['id_subcategoria']!=-1) {?>&id_subcategoria=<?php echo $fila2['id_subcategoria']; ?><?php } ?>&id_producto=<?php echo $fila2['id_producto']; ?>"><div id="i" class="productosmain hvr-buzz-out"><img src="administracion/productos/imagenes/<?php if(mysqli_num_rows($registros3)>0)echo $fila3['nombre']; else echo "no-disponible.jpg"; ?>" width="100%" alt="portatil1"><div ><?php echo $fila2['precio']." Euros"; ?></div></div></a>
 <?php
 }
 cerrarconexion();
@@ -180,7 +195,7 @@ cerrarconexion();
 </div>
 <footer class="wow bounceInDown" data-wow-duration="1.5s"><p>Todos los derechos reservados tiendaonline.com</p></footer>
 
-<!-- ventana modal -->
+<!-- VENTANA MODAL INICIO DE SESION -->
 <div style="margin-top:100px" class="modal fade" id="mostrar_ventana_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" id="i" role="document">
     <div class="modal-content">
@@ -192,7 +207,8 @@ cerrarconexion();
         <form name="form_inicio_sesion">
           <div class="form-group">
             <label for="recipient-name" class="control-label">Email:</label>
-            <input type="text" name="email" class="form-control" id="recipient-name">
+
+            <input type="email" name="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" class="form-control" id="recipient-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">Password:</label>
@@ -210,7 +226,7 @@ cerrarconexion();
         </form>
       </div>
       
-     <!-- imagen de carga -->
+     <!-- iMAGEN DE CARGA -->
       <center><div style="display:none;" id="carga"><img src="imagenes/cargando.gif"/></div></center>
       
       

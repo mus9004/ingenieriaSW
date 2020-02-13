@@ -30,8 +30,8 @@ $registros1=mysqli_query($conexion,"SELECT * FROM categorias ORDER BY categoria 
 <input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
 <ul id="css3menu1" class="topmenu">
 	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
-	<li class="topmenu"><a href="index.php" style="width:138px;height:37px;line-height:71px;">INICIO</a></li>
-	<li class="topmenu"><a href="#" style="width:163px;height:37px;line-height:71px;"><span>PRODUCTOS</span></a>
+	<li class="topmenu"><a href="index.php" class="btn btn-primary my-2">INICIO</a></li>
+	<li class="topmenu"><a href="#" class="btn btn-primary my-2"><span>PRODUCTOS</span></a>
 	<ul>
     <?php
 	while ($fila1=mysqli_fetch_array($registros1)){	
@@ -57,8 +57,8 @@ $registros1=mysqli_query($conexion,"SELECT * FROM categorias ORDER BY categoria 
 	?>
 	</ul>
     </li>
-	<li class="topmenu"><a class="pressed" href="contacto.php" style="width:155px;height:37px;line-height:71px;">CONTACTO</a></li>
-	<li class="topmenu"><a href="clientes/form_registro_clientes.php" style="height:37px;line-height:71px;">REGISTRARSE</a>
+	<li class="topmenu"><a class="pressed" href="contacto.php" class="btn btn-primary my-2">CONTACTO</a></li>
+	<li class="topmenu"><a href="clientes/form_registro_clientes.php" class="btn btn-primary my-2">REGISTRARSE</a>
     </li> 
 </ul>
 <!-- End css3menu.com BODY section -->

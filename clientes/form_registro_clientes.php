@@ -34,8 +34,8 @@ if(isset($_SESSION['id_cliente']) || isset($_COOKIE['nombre_cliente'])) header('
 <input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
 <ul id="css3menu1" class="topmenu">
 	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
-	<li class="topmenu"><a href="../index.php" style="width:172px;height:71px;line-height:71px;">INICIO</a></li>
-	<li class="topmenu"><a href="#" style="width:197px;height:71px;line-height:71px;"><span>PRODUCTOS</span></a>
+	<li class="topmenu"><a href="../index.php" class="btn btn-primary my-2">INICIO</a></li>
+	<li class="topmenu"><a href="#" class="btn btn-primary my-2"><span>PRODUCTOS</span></a>
 	<ul>
     <?php
 	while ($fila1=mysqli_fetch_array($registros1)){	
@@ -61,8 +61,8 @@ if(isset($_SESSION['id_cliente']) || isset($_COOKIE['nombre_cliente'])) header('
 	?>
 	</ul>
     </li>
-	<li class="topmenu"><a href="../contacto.php" style="width:189px;height:71px;line-height:71px;">CONTACTO</a></li>
-	<li class="topmenu"><a class="pressed" href="form_registro_clientes.php" style="height:71px;line-height:71px;">REGISTRARSE</a>
+	<li class="topmenu"><a href="../contacto.php" class="btn btn-primary my-2">CONTACTO</a></li>
+	<li class="topmenu"><a class="pressed" href="form_registro_clientes.php" class="btn btn-primary my-2">REGISTRARSE</a>
     </li> 
 </ul>
 <!-- End css3menu.com BODY section -->

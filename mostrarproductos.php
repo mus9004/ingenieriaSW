@@ -119,8 +119,8 @@ function f_ordenar2(id){
 <input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
 <ul id="css3menu1" class="topmenu">
 	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
-	<li class="topmenu"><a href="index.php" style="width:172px;height:71px;line-height:71px;">INICIO</a></li>
-	<li class="topmenu"><a class="pressed" href="#" style="width:197px;height:71px;line-height:71px;"><span>PRODUCTOS</span></a>
+	<li class="topmenu"><a href="index.php" class="btn btn-primary my-2">INICIO</a></li>
+	<li class="topmenu"><a href="#" class="btn btn-primary my-2"><span>PRODUCTOS</span></a>
 	<ul>
     <?php
 	while ($fila1=mysqli_fetch_array($registros1)){	
@@ -146,8 +146,8 @@ function f_ordenar2(id){
 	?>
 	</ul>
     </li>
-	<li class="topmenu"><a href="contacto.php" style="width:189px;height:71px;line-height:71px;">CONTACTO</a></li>
-	<li class="topmenu"><a href="#" style="height:71px;line-height:71px;"><img src="CSS3 Menu_files/css3menu1/register.png" alt=""/>REGISTRO / ACCESO</a>
+	<li class="topmenu"><a href="contacto.php"class="btn btn-primary my-2">CONTACTO</a></li>
+	<li class="topmenu"><a href="#" class="btn btn-primary my-2"><img src="CSS3 Menu_files/css3menu1/register.png" alt=""/>REGISTRO / ACCESO</a>
     	<ul>
 			<li><a href="#" onclick="mostrar_ventana_modal()">INICIAR SESIÓN</a></li>
 			<li><a href="clientes/form_registro_clientes.php">REGISTRARSE</a></li>
